@@ -1,0 +1,41 @@
+{
+  "name": "SemaphoreCI Notifier",
+  "description": "A Chrome extension to send browser notification when a SemaphoreCI build finishes.",
+  "version": "0.1.0",
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "default_title": "SemaphoreCI Notifier"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://semaphoreci.com/*"
+      ],
+      "js": [
+        "js/build-notifier.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "permissions": [
+    "activeTab",
+    "notifications",
+    "tabs"
+  ],
+  "manifest_version": 2
+}
