@@ -16,7 +16,6 @@ function handleTitleChanged(mutation) {
     console.log('Build OK!');
     chrome.runtime.sendMessage({
       type: 'semaphoreci-notifier', options: {
-        type: 'basic',
         iconUrl: chrome.extension.getURL('images/passed.png'),
         title: 'Build OK!',
         message: innerHTML
@@ -28,7 +27,6 @@ function handleTitleChanged(mutation) {
     console.log('Build Failed!');
     chrome.runtime.sendMessage({
       type: 'semaphoreci-notifier', options: {
-        type: 'basic',
         iconUrl: chrome.extension.getURL('images/failed.png'),
         title: 'Build Failed!',
         message: innerHTML
@@ -56,4 +54,4 @@ observer.observe(document.querySelector('head'), {
   characterDataOldValue: true
 });
 
-console.log('SemaphoreCI Notifier v12:56 active!');
+console.log('SemaphoreCI Notifier active!');
