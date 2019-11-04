@@ -17,7 +17,7 @@ function handleTitleChanged(mutation) {
     chrome.runtime.sendMessage({
       type: 'semaphoreci-notifier', options: {
         type: 'basic',
-        iconUrl: chrome.extension.getURL('images/icon128.png'),
+        iconUrl: chrome.extension.getURL('images/passed.png'),
         title: 'Build OK!',
         message: innerHTML
       }
@@ -29,7 +29,7 @@ function handleTitleChanged(mutation) {
     chrome.runtime.sendMessage({
       type: 'semaphoreci-notifier', options: {
         type: 'basic',
-        iconUrl: chrome.extension.getURL('images/icon128.png'),
+        iconUrl: chrome.extension.getURL('images/failed.png'),
         title: 'Build Failed!',
         message: innerHTML
       }
