@@ -56,4 +56,4 @@ observer.observe(document.querySelector('head'), {
   characterDataOldValue: true
 });
 
-console.log('SemaphoreCI Notifier active!');
+console.log('SemaphoreCI Notifier v12:56 active!');
