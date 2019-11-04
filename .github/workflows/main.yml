@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: zip semaphore-ci-notifier.zip *
+      - uses: trmcnvn/chrome-addon@v1
+        with:
+          # extension is the extension ID
+          extension: fidjidielhnphocjcnbccipbjikemnpl
+          zip: semaphore-ci-notifier.zip
+          client-id: ${{ secrets.CHROME_CLIENT_ID }}
+          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
